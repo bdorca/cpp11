@@ -1,3 +1,3 @@
-Az elıad·son (https://cpp11.eet.bme.hu/ea01.php) volt szÛ rÛla, hogy a tˆrt oszt·lynak felesleges settereket Ìrni. Meg arrÛl is, hogy minÈl kisebb az oszt·ly (minÈl kevesebb szintaktikailag is tagf¸ggvÈny tagf¸ggvÈnye van), ann·l jobb. PrÛb·ld ezt ki!
+Az el≈ëad√°son (https://cpp11.eet.bme.hu/ea01.php) volt sz√≥ r√≥la, hogy a t√∂rt oszt√°lynak felesleges settereket √≠rni. Meg arr√≥l is, hogy min√©l kisebb az oszt√°ly (min√©l kevesebb szintaktikailag is tagf√ºggv√©ny tagf√ºggv√©nye van), ann√°l jobb. Pr√≥b√°ld ezt ki!
 
-Dolgozd ki a C++ tˆrt oszt·lyt! ValÛsÌtsd meg a + (egyoperandus˙), +=, - (egy- Ès kÈtoperandus˙), -=, *, *=, /, /=, istream >>, (double) cast oper·torokat! Figyelj a referenci·k helyes haszn·latra! Mennyi a legkevesebb ˙j tagf¸ggvÈny, amennyivel ez megoldhatÛ?
+Dolgozd ki a C++ t√∂rt oszt√°lyt! Val√≥s√≠tsd meg a + (egyoperandus√∫), +=, - (egy- √©s k√©toperandus√∫), -=, *, *=, /, /=, istream >>, (double) cast oper√°torokat! Figyelj a referenci√°k helyes haszn√°latra! Mennyi a legkevesebb √∫j tagf√ºggv√©ny, amennyivel ez megoldhat√≥?
