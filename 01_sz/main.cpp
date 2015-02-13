@@ -32,7 +32,7 @@ public:
     Tort& operator*=(Tort const& rhs);
 
     Tort& operator/=(Tort const& rhs);
-
+//asd
     operator double() {
         return (double) _szaml / (double) _nev;
     }
