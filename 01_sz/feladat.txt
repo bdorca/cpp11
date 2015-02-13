@@ -1,3 +1,5 @@
-Az előadáson (https://cpp11.eet.bme.hu/ea01.php) volt szó róla, hogy a tört osztálynak felesleges settereket írni. Meg arról is, hogy minél kisebb az osztály (minél kevesebb szintaktikailag is tagfüggvény tagfüggvénye van), annál jobb. Próbáld ezt ki!
+Az előadáson (https://cpp11.eet.bme.hu/ea01.php) volt szó róla, hogy a tört osztálynak felesleges settereket írni.
+Meg arról is, hogy minél kisebb az osztály (minél kevesebb szintaktikailag is tagfüggvény tagfüggvénye van), annál jobb. Próbáld ezt ki!
 
-Dolgozd ki a C++ tört osztályt! Valósítsd meg a + (egyoperandusú), +=, - (egy- és kétoperandusú), -=, *, *=, /, /=, istream >>, (double) cast operátorokat! Figyelj a referenciák helyes használatra! Mennyi a legkevesebb új tagfüggvény, amennyivel ez megoldható?
+Dolgozd ki a C++ tört osztályt! Valósítsd meg a + (egyoperandusú), +=, - (egy- és kétoperandusú), -=, *, *=, /, /=, istream >>,
+(double) cast operátorokat! Figyelj a referenciák helyes használatra! Mennyi a legkevesebb új tagfüggvény, amennyivel ez megoldható?
