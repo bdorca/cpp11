@@ -4,7 +4,7 @@ using namespace std;
 
 class Tort {
 private:
-    int _szaml, _nev;
+    int szaml_, nev_;
 public:
     Tort() {
     }
@@ -13,28 +13,21 @@ public:
         int a = n, b = d, t;
         while (b != 0)
             t = a % b, a = b, b = t;
-        _szaml = n / a;
-        _nev = d / a;
+        szaml_ = n / a;
+        nev_ = d / a;
     }
 
     int szaml() {
-        return _szaml;
+        return szaml_;
     }
 
     int nev() {
-        return _nev;
+        return nev_;
     }
 
-    Tort& operator+=(Tort const& rhs);
-
-    Tort& operator-=(Tort const& rhs);
-
-    Tort& operator*=(Tort const& rhs);
-
-    Tort& operator/=(Tort const& rhs);
 
     operator double() {
-        return (double) _szaml / (double) _nev;
+        return (double) szaml_ / (double) nev_;
     }
 
 };
@@ -43,29 +36,30 @@ Tort operator-(Tort t) {
     return Tort(-t.szaml(), t.nev());
 }
 
-Tort operator+(Tort t) {                 //reciprok kepzesre
-    return Tort(t.nev(), t.szaml());
+Tort operator+(Tort t) {
+    return t;
 }
 
-Tort& Tort::operator+=(Tort const& rhs) {
-    *this = Tort(this->_szaml * rhs._nev + rhs._szaml * this->_nev,
-            this->_nev * rhs._nev);
-    return *this;
+Tort& operator+=(Tort& lhs, Tort rhs) {
+    lhs = Tort(lhs.szaml() * rhs.nev() + rhs.szaml() * lhs.nev(),
+            lhs.nev() * rhs.nev());
+    return lhs;
 }
 
-Tort& Tort::operator-=(Tort const& rhs) {
-    *this += (-rhs);
-    return *this;
+Tort& operator-=(Tort& lhs, Tort rhs) {
+    lhs += (-rhs);
+    return lhs;
 }
 
-Tort& Tort::operator*=(Tort const& rhs) {
-    *this = Tort(this->_szaml * rhs._szaml, this->_nev * rhs._nev);
-    return *this;
+Tort& operator*=(Tort& lhs, Tort rhs) {
+    lhs = Tort(lhs.szaml() * rhs.szaml(), lhs.nev() * rhs.nev());
+    return lhs;
 }
 
-Tort& Tort::operator/=(Tort const& rhs) {
-    *this *= (+rhs);
-    return *this;
+Tort& operator/=(Tort& lhs, Tort rhs) {
+    Tort t = Tort(rhs.nev(), rhs.szaml());
+    lhs *= t;
+    return lhs;
 }
 
 Tort operator+(Tort t1, Tort const& t2) {
@@ -104,11 +98,10 @@ int main() {
     Tort t1 = Tort(3, 2);
     Tort t2 = Tort(3, 4);
     Tort t3 = t1 - t2;
-    Tort t5 = Tort(1 , 1);
-    t5 += t3 / t2;
+    Tort t5 = t1 / t2;
     cout << t1 << " " << t2 << " " << t3 << endl;
     cout << (double) t3 << endl;
-    cout<<"t5 "<<t5<<endl;
+    cout << "t5 " << t5 << endl;
 
     return 0;
 }
