@@ -1,3 +1,6 @@
+*.cbp
+*.depend
+*.layout
 .idea
 # Compiled Object files
 *.slo
