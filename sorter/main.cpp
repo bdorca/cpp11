@@ -5,6 +5,8 @@
 #include <cstdlib>
 #include <ctime>
 #include <fstream>
+#include <memory>
+#include <algorithm>
 
 
 /**
@@ -30,9 +32,9 @@ int main(int argc, char **argv)
 	bool greater=false;
 	bool random=false;
 	int size=15;
+	app.onStart();
 	while(!quit){
-		app.onStart();
-		BaseSorter<Column>* sorter;
+		std::unique_ptr<BaseSorter<Column>> sorter;
 		while (SDL_PollEvent(&e)){
 			if (e.type == SDL_QUIT){
 				quit = true;
@@ -41,22 +43,22 @@ int main(int argc, char **argv)
 				SDL_KeyboardEvent kEvent = e.key;
 				switch(kEvent.keysym.scancode){
 					case SDL_SCANCODE_1:
-						sorter= new QuickSorter<Column>;
+						sorter.reset(new QuickSorter<Column>);
 						break;
 					case SDL_SCANCODE_2:
-						sorter= new BubbleSorter<Column>;
+						sorter.reset( new BubbleSorter<Column>);
 						break;
 					case SDL_SCANCODE_3:
-						sorter= new GnomeSorter<Column>;
+						sorter.reset( new GnomeSorter<Column>);
 						break;						
 					case SDL_SCANCODE_4:
-						sorter= new SelectionSorter<Column>;
+						sorter.reset( new SelectionSorter<Column>);
 						break;
 					case SDL_SCANCODE_5:
-						sorter= new Bubble2Sorter<Column>;
+						sorter.reset( new Bubble2Sorter<Column>);
 						break;
 					case SDL_SCANCODE_6:
-						sorter=new MergeSorter<Column>;
+						sorter.reset(new MergeSorter<Column>);
 						break;						
 					case SDL_SCANCODE_G:
 						greater=true;
@@ -109,12 +111,12 @@ int main(int argc, char **argv)
 				(*sorter)(c,size, [](Column a, Column b){return a<=b;});	
 			}
 
-			delete sorter;
-			sorter=nullptr;
 			for(int i=0;i<size;i++){
 				std::cout<<c[i].getVaule()<<" ";
 			}
 			std::cout<<"\n";
+			app.wait();
+			app.onStart();
 		}	
 	}
 	app.onExit();

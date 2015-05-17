@@ -35,6 +35,7 @@ bool App::onInit()
 
 void App::onStart()
 {
+	std::cout<<"onStart"<<std::endl;
 	std::string str="Hello\n1:QuickSort\n2:BubbleSort\n"
 			"3:GnomeSort\n4:SelectionSort\n5:Bubble2Sort"
 			"\n6:MergeSort"
@@ -43,9 +44,30 @@ void App::onStart()
 
 	SDL_SetRenderDrawColor( renderer, 0, 255, 255, 255 );
 	SDL_RenderClear( renderer );
+	textRect.x=0;
+	textRect.y=0;
 	writeText(str);
 	SDL_RenderPresent( renderer);
 
+}
+
+void App::wait(){
+	std::string str="Press any key";
+	SDL_SetRenderDrawColor( renderer, 0, 255, 255, 255 );
+	textRect.x=width/2;
+	textRect.y=height/2;
+	writeText(str);
+	SDL_RenderPresent( renderer);
+	
+	SDL_Event e;	
+	bool pressed=false;
+	while(!pressed){
+		while(SDL_PollEvent(&e)){
+			if (e.type == SDL_KEYDOWN){
+					pressed=true;
+			}
+		}
+	}	
 }
 
 void App::writeText(std::string& str){
@@ -57,8 +79,6 @@ void App::writeText(std::string& str){
 	SDL_FreeSurface( textSurface );
  
 	SDL_QueryTexture( textTexture, NULL, NULL, &textRect.w, &textRect.h );
-	textRect.x = 0;
-	textRect.y = 0;
 	
 	SDL_RenderCopy( renderer, textTexture, nullptr, &textRect ); 
 	
@@ -92,7 +112,7 @@ bool App::onRender(bool swap=false,int a=-1, int b=-1)
 	SDL_RenderClear( renderer );
 	for(size_t i=0;i<size;i++){
 		SDL_Color c;
-		if(a==i || b==i){
+		if((size_t)a==i || (size_t)b==i){
 			if(swap){
 				c.a=255;
 				c.r=0;

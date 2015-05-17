@@ -1,9 +1,9 @@
 #ifndef APP_H
 #define APP_H
-#include "SDL2/SDL.h"
+#include <SDL2/SDL.h>
 #include "column.h"
 #include "listener.h"
-#include "SDL2/SDL_ttf.h"
+#include <SDL2/SDL_ttf.h>
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -107,6 +107,10 @@ public:
 	 * @param d 
 	 */
 	void setDelay(int d);
+	/**
+	 * @brief press any key
+	 */
+	void wait();
 	/**
 	 * Destructor
 	 */

@@ -9,7 +9,7 @@
  * @param b
  */
 template<typename T>
-void swap(T& a, T& b){
+void mySwap(T& a, T& b){
 	T temp=a;
 	a=b;
 	b=temp;
@@ -45,7 +45,7 @@ public:
 		for(int i=s-1;i>0;i--){
 			for(int j=0;j<i;j++){
 				if(!f(a[j],a[j+1])){
-					swap<T>(a[j],a[j+1]);
+					mySwap<T>(a[j],a[j+1]);
 				}
 			}
 		}
@@ -64,7 +64,7 @@ public:
 		for(int i=0;i<s-1;i++){
 			for(int j=i;j<s;j++){
 				if(!f(a[i],a[j])){
-					swap<T>(a[i],a[j]);
+					mySwap<T>(a[i],a[j]);
 				}
 			}
 		}
@@ -88,7 +88,7 @@ public:
 				if (f(a[j], a[index]))
 					index = j;
 			if (index != i) {         
-				swap<T>(a[index],a[i]);
+				mySwap<T>(a[index],a[i]);
 			}
 		}
 	}
@@ -111,7 +111,7 @@ public:
 			if (i == 0 || f(a[i-1], a[i])) { 
 				i++;                
 			} else {
-				swap<T>(a[i],a[i-1]);
+				mySwap<T>(a[i],a[i-1]);
 				i--;                
 			}
 		}
