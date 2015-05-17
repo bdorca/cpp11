@@ -1,6 +1,10 @@
 *.cbp
 *.depend
 *.layout
+*.project
+*.mk
+*.o
+*.d
 .idea
 # Compiled Object files
 *.slo
