@@ -1,0 +1,15 @@
+Nézd meg az 5. elõadás anyagában, a mértékegységes feladatnál a Joule/Newton*méter 
+kiírással kapcsolatos részeket! Ezek után...
+
+a) Írj bináris szám kiíró I/O manipulátort! A használata legyen az alábbi:
+
+std::cout << bin << 240 << std::endl;        /* 11110000 */
+
+Vajon mi lehet itt a bin típusa?
+
+b) Írj akárhányas számrendszerben kiíró I/O manipulátort!
+
+std::cout << base(2) << 240;    /* 11110000 */
+std::cout << base(16) << 240;   /* F0 */
+
+Melyik az elsõ részkifejezés, amit ki kell értékelnie a fordítónak? Indulj ki ebbõl!
