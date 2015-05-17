@@ -36,6 +36,7 @@
     <File Name="app.h"/>
     <File Name="app.cpp"/>
     <File Name="listener.h"/>
+    <File Name="Makefile"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>
