@@ -24,12 +24,6 @@ int main(int argc, char **argv)
 	if(!app.onInit()){
 		return -1;
 	}
-/*	int a[10];
-	int b[10];
-	for(int i=0;i<10;i++){
-		a[i]=10-i;
-		b[i]=i+1;
-	}*/
 	
 	bool quit=false;
 	SDL_Event e;
@@ -121,12 +115,7 @@ int main(int argc, char **argv)
 				std::cout<<c[i].getVaule()<<" ";
 			}
 			std::cout<<"\n";
-		}
-	//	BubbleSorter<int> bs;
-	//	bs(a, 10, [](int a, int b){return a<b;});
-	//	GnomeSorter<int> ss;
-	//	ss(b,10, [](int a, int b){return a>=b;});
-	
+		}	
 	}
 	app.onExit();
 	return 0;
